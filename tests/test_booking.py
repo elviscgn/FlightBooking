@@ -8,7 +8,7 @@ class TestBooking(unittest.TestCase):
 
     def test_confirm_booking_links_both(self):
         f = Flight("BK100", "A", "B", capacity=2)
-        p = Passenger("Alice", "PX1")
+        p = Passenger("Nothando", "PX1")
         booking = Booking(p, f)
         booking.confirm()
         self.assertIn(p, f.booked_passengers)
@@ -17,7 +17,7 @@ class TestBooking(unittest.TestCase):
 
     def test_cancel_booking_unlinks_both(self):
         f = Flight("BK101", "A", "B", capacity=2)
-        p = Passenger("Bob", "PX2")
+        p = Passenger("Paris", "PX2")
         booking = Booking(p, f)
         booking.confirm()
         booking.cancel()
@@ -27,7 +27,7 @@ class TestBooking(unittest.TestCase):
 
     def test_double_confirm_prevention(self):
         f = Flight("BK102", "A", "B", capacity=2)
-        p = Passenger("Carol", "PX3")
+        p = Passenger("Paris", "PX3")
         booking = Booking(p, f)
         booking.confirm()
         try:
@@ -39,10 +39,10 @@ class TestBooking(unittest.TestCase):
 
     def test_str_booking(self):
         f = Flight("BK103", "A", "B", capacity=2)
-        p = Passenger("Derek", "PX4")
+        p = Passenger("Elvis", "PX4")
         booking = Booking(p, f)
         booking.confirm()
         s = str(booking)
-        self.assertIn("Derek", s)
+        self.assertIn("Elvis", s)
         self.assertIn("BK103", s)
         self.assertIn("Confirmed", s)
