@@ -1,9 +1,5 @@
 # ✈️ Flight Booking System
 
-Welcome to the **Flight Booking System** — a fully object-oriented Python project designed to teach **real-world OOP design**, **dunder methods**, **decorators**, and **test-driven development (TDD)** through a fun, practical problem: booking flights.
-
----
-
 ## 🧱 Overview
 
 This project simulates the core logic of an airline booking app.  
