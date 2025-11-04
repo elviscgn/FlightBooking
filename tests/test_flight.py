@@ -16,9 +16,9 @@ class TestFlight(unittest.TestCase):
 
     def test_add_booking_until_full(self):
         f = Flight("EK203", "Nairobi", "Lagos", capacity=2)
-        p1 = Passenger("Alice", "P001")
-        p2 = Passenger("Bob", "P002")
-        p3 = Passenger("Carol", "P003")
+        p1 = Passenger("Nothando", "P001")
+        p2 = Passenger("Paris", "P002")
+        p3 = Passenger("Elvis", "P003")
         f.add_booking(p1)
         f.add_booking(p2)
         self.assertTrue(f.is_full())
@@ -26,9 +26,9 @@ class TestFlight(unittest.TestCase):
             f.add_booking(p3)
 
     def test_available_seats(self):
-        f = Flight("EK204", "Joburg", "Cairo", capacity=2)
+        f = Flight("EK204", "Joburg", "Mombasa", capacity=2)
         self.assertEqual(f.available_seats, 2)
-        p = Passenger("Dave", "P004")
+        p = Passenger("Elvis", "P004")
         f.add_booking(p)
         self.assertEqual(f.available_seats, 1)
 
@@ -44,3 +44,5 @@ class TestFlight(unittest.TestCase):
         s = str(f)
         self.assertIn("EK206", s)
         self.assertIn("Seats", s)
+
+# base difficulty 2/10
